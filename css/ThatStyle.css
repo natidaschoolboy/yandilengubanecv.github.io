@@ -477,34 +477,72 @@ form textarea {
   }
 }
 @media (max-width: 820px) {
+  @media (max-width: 768px) {
+  :root {
+    --big-font: 2.8rem;
+    --h2-font: 2.2rem;
+    --p-font: 0.95rem;
+  }
+
+  /* 1. Fix the background image and general spacing */
+  .home {
+    background-position: center;
+    padding: 120px 5% 60px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  section {
+    padding: 80px 5% 50px; /* Reduces the 15% padding so text fits */
+  }
+
+  /* 2. Stack elements that are side-by-side */
+  .about, .contact, .services-content, .portfolio-content {
+    grid-template-columns: 1fr; /* Forces single column */
+    gap: 2rem;
+  }
+
+  /* 3. Stack the buttons vertically */
+  .button {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .btn2 {
+    margin-left: 0;
+  }
+
+  /* 4. Fix images so they don't overflow */
+  .about-img img, .row img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 5. Handle the navigation menu */
   #menu-icon {
     display: block;
   }
+
   .navlist {
     position: absolute;
     top: -1000px;
     right: 0;
     left: 0;
-    display: flex;
     flex-direction: column;
-    background: var(--bg-color);
-    text-align: left;
+    background: var(--second-big-color);
+    padding: 20px;
     transition: all 0.45s ease;
   }
-  .navlist a {
-    display: block;
-    margin: 17px;
-    font-size: 20px;
-    transition: all 0.45s ease;
-    color: var(--text-color);
-  }
-  .navlist a:hover {
-    color: var(--main-color);
-  }
-  .navlist a.active {
-    color: var(--text-color);
-  }
+
   .navlist.open {
     top: 100%;
   }
+
+  /* Prevent the Bible verse from breaking awkwardly */
+  .home-text p br {
+    display: none;
+  }
+}
 }
