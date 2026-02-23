@@ -476,8 +476,8 @@ form textarea {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 820px) {
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   :root {
     --big-font: 2.8rem;
     --h2-font: 2.2rem;
@@ -486,6 +486,9 @@ form textarea {
 
   /* 1. Fix the background image and general spacing */
   .home {
+    /* Changing the background to yandile2.jpeg for mobile */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../yandile2.jpeg');
+    background-size: cover;
     background-position: center;
     padding: 120px 5% 60px;
     height: auto;
@@ -493,12 +496,12 @@ form textarea {
   }
 
   section {
-    padding: 80px 5% 50px; /* Reduces the 15% padding so text fits */
+    padding: 80px 5% 50px; 
   }
 
   /* 2. Stack elements that are side-by-side */
   .about, .contact, .services-content, .portfolio-content {
-    grid-template-columns: 1fr; /* Forces single column */
+    grid-template-columns: 1fr; 
     gap: 2rem;
   }
 
@@ -544,5 +547,4 @@ form textarea {
   .home-text p br {
     display: none;
   }
-}
 }
